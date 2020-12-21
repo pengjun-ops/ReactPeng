@@ -3,7 +3,7 @@ import { Switch,Route,BrowserRouter,withRouter } from "react-router-dom";
 //组件
 import Home from "../../views/home/Index";
 import User from "../../views/User/index";
-import Gas from "../../views/Gas/Index";
+import Gas from "../../views/Gas/router";
 import Predict from '../../views/Predict/router';
 import Location from '../../views/Loaction/router';
 

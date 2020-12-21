@@ -4,10 +4,10 @@ import GasChart from './Index';
 export default class App extends Component {
     constructor(props) {
         super(props);
-        this.state = {};
+        this.state = {
+            show:true
+        };
     }
-
-
 
     render() {
         return (
@@ -18,7 +18,7 @@ export default class App extends Component {
                             <div className="chart-wrapper">
                                 <div className="chart-div" id="rankChart">
                                     <div className="chart-loader">
-                                        <GasChart/>
+                                        <GasChart  show = {this.state.show}/>
                                     </div>
                                 </div>
                             </div>

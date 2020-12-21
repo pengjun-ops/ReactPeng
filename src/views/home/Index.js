@@ -10,7 +10,9 @@ import Location from '../Loaction/Index';
 class Index extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      show:false
+    };
   }
 
   render() {
@@ -23,7 +25,7 @@ class Index extends Component {
                 <div className="chart-wrapper">
                   <div className="chart-div" id="rankChart">
                     <div className="chart-loader">
-                      <PredictChart/>
+                      <PredictChart   show = {this.state.show}/>
                     </div>
                   </div>
                 </div>
@@ -74,7 +76,7 @@ class Index extends Component {
               <div className="flex-cell flex-cell-lc" style={{paddingBottom:0}}>
                 <div className="chart-wrapper">
                   <div className="chart-div" id="trendChart">
-                    <div className="chart-loader"><GasChart/></div>
+                    <div className="chart-loader">< GasChart   show = {this.state.show}/></div>
                   </div>
                 </div>
               </div>
