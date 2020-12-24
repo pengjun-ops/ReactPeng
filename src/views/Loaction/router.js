@@ -4,7 +4,9 @@ import MapChart from './Index';
 export default class App extends Component {
     constructor(props) {
         super(props);
-        this.state = {};
+        this.state = {
+            show : true
+        };
     }
 
 
@@ -18,7 +20,7 @@ export default class App extends Component {
                             <div className="chart-wrapper">
                                 <div className="chart-div" id="rankChart">
                                     <div className="chart-loader">
-                                        <MapChart/>
+                                        <MapChart  show = {this.state.show}/>
                                     </div>
                                 </div>
                             </div>

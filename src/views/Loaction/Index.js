@@ -51,7 +51,7 @@ const myChart = echarts.init(document.getElementById('location'));
             text : '苏州市燃气门站分布',
             subtext : 'Gas Location',
             link:'/location',
-            left : 'center',
+            left : this.props.show?'center':'left',
             textStyle : {
                 color:'#9aa8d4',
             }

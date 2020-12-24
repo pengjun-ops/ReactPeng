@@ -83,7 +83,7 @@ class Index extends Component {
               <div className="flex-cell flex-cell-r" style={{paddingBottom:0}}>
                 <div className="chart-wrapper">
                   <div className="chart-div" id="csrcChart">
-                    <div className="chart-loader"><Location/></div>
+                    <div className="chart-loader"><Location show = {this.state.show}/></div>
                   </div>
                 </div>
               </div>
