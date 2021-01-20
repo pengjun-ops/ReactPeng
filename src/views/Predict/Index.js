@@ -57,13 +57,37 @@ export default class GasChart extends Component {
             xAxis: {
                 data: real.map(function (item) {
                     return item["date"];
-                })
+                }),
+                axisLine: {
+                    lineStyle: {
+                        type: 'solid',
+                        color:'#fff',
+                        width:'1'
+                    }
+                },
+                axisLabel: {
+                    textStyle: {
+                        color: '#fff'
+                    }
+                }
             },
 
             yAxis: {
                 scale:true,
                 splitLine: {
                     show: false
+                },
+                axisLine: {
+                    lineStyle: {
+                        type: 'solid',
+                        color:'#fff',
+                        width:'1'
+                    }
+                },
+                axisLabel: {
+                    textStyle: {
+                        color: '#fff'
+                    }
                 }
             },
             toolbox: {
@@ -72,6 +96,7 @@ export default class GasChart extends Component {
                 }
             },
             dataZoom: [{
+                show:false,
                 startValue: '2020-09-01'
             }, {
                 type: 'inside',
@@ -88,8 +113,8 @@ export default class GasChart extends Component {
                 top: '10%',
                 left:'10%',
                 name: '实际数据',
+                symbol:'none',
                 type: 'line',
-                symbolSize:1,   //拐点圆的大小
                 data: real.map(function (item) {
                     return item["gas"];
                 }),

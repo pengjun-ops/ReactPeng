@@ -34,6 +34,12 @@ export default class GasChart extends Component {
                     color:'#9aa8d4',
                 }
             },
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'shadow',
+                }
+            },
             xAxis: {
                 data: data.map(function (item) {
                     return item["year"];
@@ -71,18 +77,6 @@ export default class GasChart extends Component {
                 }
             ],
             series: [
-                { // For shadow
-                    type: 'bar',
-                    itemStyle: {
-                        color: 'rgba(0,0,0,0.05)'
-                    },
-                    barGap: '-100%',
-                    barCategoryGap: '40%',
-                    data: data.map(function (item) {
-                        return item["user"];
-                    }),
-                    animation: false
-                },
                 {
                     type: 'bar',
                     itemStyle: {
@@ -95,6 +89,8 @@ export default class GasChart extends Component {
                             ]
                         )
                     },
+                    barGap: '-100%',
+                    barCategoryGap: '40%',
                     emphasis: {
                         itemStyle: {
                             color: new echarts.graphic.LinearGradient(
