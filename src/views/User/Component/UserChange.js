@@ -71,11 +71,9 @@ export default class GasChart extends Component {
                     }
                 }
             },
-            dataZoom: [
-                {
-                    type: 'inside'
-                }
-            ],
+            dataZoom: [{
+                type: 'inside',
+            }],
             series: [
                 {
                     type: 'bar',

@@ -19,7 +19,7 @@ export default class App extends Component {
                             <div className="chart-wrapper">
                                 <div className="chart-div" id="rankChart">
                                     <div className="chart-loader">
-                                        <RangeChart  show = {this.state.show}/>
+                                        <PredictChart  show = {this.state.show}/>
                                     </div>
                                 </div>
                             </div>
@@ -31,7 +31,7 @@ export default class App extends Component {
                             <div className="chart-wrapper">
                                 <div className="chart-div" id="rankChart">
                                     <div className="chart-loader">
-                                        <PredictChart  show = {this.state.show}/>
+                                        <RangeChart  show = {this.state.show}/>
                                     </div>
                                 </div>
                             </div>

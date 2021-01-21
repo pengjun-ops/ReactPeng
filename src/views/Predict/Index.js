@@ -96,7 +96,6 @@ export default class GasChart extends Component {
                 }
             },
             dataZoom: [{
-                show:false,
                 startValue: '2020-09-01'
             }, {
                 type: 'inside',
