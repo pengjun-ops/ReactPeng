@@ -1,20 +1,27 @@
 import echarts from "echarts/lib/echarts";
 import 'echarts/map/js/province/jiangsu';
 import 'echarts/map/js/china';
+// 引入提示框和标题组件
+import 'echarts/lib/component/tooltip';
+import 'echarts/lib/component/toolbox';
+import 'echarts/lib/component/title';
+import 'echarts/lib/component/visualMap';
+import 'echarts/lib/component/dataZoom';
+import 'echarts/lib/component/legend';
+import 'echarts/lib/component/markLine';
 import React, {Component} from "react";
 
 export default class Location extends Component {
 constructor(props) {
     super(props);
-    this.state = {};
 }
 
 componentDidMount() {
     const data = [{ name: '福运路',      value: 68962293},
                   { name: '曹庄',        value: 43323658 },
-                  { name: '坝基桥',      value: 8333625.5},
+                  { name: '坝基桥',      value: 8333625},
                   { name: '王家庄',      value: 52791584},
-                  { name: '苏旺路',      value: 29849274.83},
+                  { name: '苏旺路',      value: 29849274},
                   { name: '东山大道',    value: 14074942},];
     const geoCoordMap = {
         '福运路': [120.596697,31.314577],
@@ -36,7 +43,9 @@ componentDidMount() {
                 });
             }
         }
+        console.log(res)
         return res;
+
     };
 const myChart = echarts.init(document.getElementById('location'));
     myChart.showLoading();
@@ -132,7 +141,7 @@ const myChart = echarts.init(document.getElementById('location'));
             itemStyle : {
                 normal : {
                     areaColor : '#D5EEFD',
-                    borderColor : '#000000'
+                    borderColor : '#000000',
                 },
                 emphasis : {
                     areaColor : '#00dfff',
@@ -140,10 +149,13 @@ const myChart = echarts.init(document.getElementById('location'));
             }
         },
         series : [ {
-            name : '门站流量 (单位：2000000 供)',
+            name : '门站流量',
             type : 'effectScatter',
             coordinateSystem : 'geo',
             data : convertData(data),
+            encode: {
+                value: 2
+            },
             symbolSize : function(val) {
                 return val[2] / 2000000;
             },
