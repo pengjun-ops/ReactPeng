@@ -18,7 +18,7 @@ const routerList = [
 
       },
       {
-        title: "地理信息",
+        title: "地理位置",
         icon: "inform",
         key: "/location",
       },
