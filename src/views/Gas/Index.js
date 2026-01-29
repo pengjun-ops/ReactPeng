@@ -27,7 +27,7 @@ export default class GasChart extends Component {
         console.log(this.props.show);
         // 绘制图表
         myChart.setOption({
-            title: { text: '燃气近十年使用情况-Long term gas history',
+            title: { text: '燃气近期使用情况-Long term gas history',
                 link:'/gas',
                 x:'center',
                 padding:this.props.show ?[10,0,0,0]:[50,0,0,0],
